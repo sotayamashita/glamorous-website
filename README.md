@@ -1,54 +1,45 @@
-<img src="https://github.com/paypal/glamorous/raw/master/other/logo/full.png" alt="glamorous logo" title="glamorous" align="right" width="150" height="150" />
-
-# glamorous-website
-
-This is the website for [`glamorous`](https://github.com/paypal/glamorous/) and is built with [`next`](https://github.com/zeit/next.js) and `glamorous` of course.
+<h1 align="center">
+  <img src="https://github.com/paypal/glamorous/raw/master/other/logo/full.png" alt="glamorous" title="glamorous" width="200">
+  <br>
+  glamorous-website 💄
+  <br>
+</h1>
+<p align="center" style="font-size: 1.2rem;">
+  This is the website for
+  <a href="https://github.com/paypal/glamorous">glamorous</a>
+  and is built with
+  <a href="https://github.com/zeit/next.js">next</a>
+  and
+  <a href="https://github.com/paypal/glamorous">glamorous</a>
+  of course.
+</p>
 
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
-[![Dependencies][dependencyci-badge]][dependencyci]
-[![version][version-badge]][package]
-[![downloads][downloads-badge]][npm-stat]
-[![MIT License][license-badge]][LICENSE]
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-46-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome][prs-badge]][prs]
-[![Donate][donate-badge]][donate]
 [![Code of Conduct][coc-badge]][coc]
-[![Roadmap][roadmap-badge]][roadmap]
-[![Examples][examples-badge]][examples]
-
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
 
-## Installing
-
-This site requires `node` and `npm` to be installed first. Then:
-
-1. Clone the repo
-2. Run `npm install` (or `yarn install`)
-3. Run `npm run dev` to run a local version to view
-
-If you plan to deploy the project, you can run `npm run build` to build the `next` site.
-
 ## Contributing
 
-If you plan to contribute to the project you should run tests along the way. Testing is performed with [`xo`](https://github.com/sindresorhus/xo) for linting and [`jest`](https://github.com/facebook/jest) for snapshot testing. You can do so like this:
-
-To lint the project run `npm run lint`.
-
-To run all tests run `npm test`.
-
-If you make changes that require updating the `jest` snapshots, run `npm test -- -u`
+See `CONTRIBUTING.md`.
 
 ## Contributors
 
 Thanks goes to these people ([emoji key][emojis]):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars.githubusercontent.com/u/1500684?v=3" width="100px;"/><br /><sub>Kent C. Dodds</sub>](https://kentcdodds.com)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=kentcdodds "Code") [📖](https://github.com/kentcdodds/glamorous-website/commits?author=kentcdodds "Documentation") [🚇](#infra-kentcdodds "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/kentcdodds/glamorous-website/commits?author=kentcdodds "Tests") | [<img src="https://avatars0.githubusercontent.com/u/737065?v=3" width="100px;"/><br /><sub>Paul Molluzzo</sub>](https://paul.molluzzo.com)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=paulmolluzzo "Code") [📖](https://github.com/kentcdodds/glamorous-website/commits?author=paulmolluzzo "Documentation") [👀](#review-paulmolluzzo "Reviewed Pull Requests") [⚠️](https://github.com/kentcdodds/glamorous-website/commits?author=paulmolluzzo "Tests") | [<img src="https://avatars0.githubusercontent.com/u/11924130?v=3" width="100px;"/><br /><sub>zhu haihao</sub>](http://liadbiz.github.io)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=liadbiz "Code") [📖](https://github.com/kentcdodds/glamorous-website/commits?author=liadbiz "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/3509412?v=3" width="100px;"/><br /><sub>Montlouis-Calixte Stéphane</sub>](http://sbydesign.fr)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=bulby97 "Code") | [<img src="https://avatars2.githubusercontent.com/u/3619527?v=3" width="100px;"/><br /><sub>Parvez Kose</sub>](http://parvezk.github.io/)<br /> |
-| :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars.githubusercontent.com/u/1500684?v=3" width="100px;"/><br /><sub>Kent C. Dodds</sub>](https://kentcdodds.com)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=kentcdodds "Code") [📖](https://github.com/kentcdodds/glamorous-website/commits?author=kentcdodds "Documentation") [🚇](#infra-kentcdodds "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/kentcdodds/glamorous-website/commits?author=kentcdodds "Tests") [👀](#review-kentcdodds "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/737065?v=3" width="100px;"/><br /><sub>Paul Molluzzo</sub>](https://paul.molluzzo.com)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=paulmolluzzo "Code") [📖](https://github.com/kentcdodds/glamorous-website/commits?author=paulmolluzzo "Documentation") [👀](#review-paulmolluzzo "Reviewed Pull Requests") [⚠️](https://github.com/kentcdodds/glamorous-website/commits?author=paulmolluzzo "Tests") | [<img src="https://avatars0.githubusercontent.com/u/11924130?v=3" width="100px;"/><br /><sub>zhu haihao</sub>](http://liadbiz.github.io)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=liadbiz "Code") [📖](https://github.com/kentcdodds/glamorous-website/commits?author=liadbiz "Documentation") [🌍](#translation-liadbiz "Translation") | [<img src="https://avatars0.githubusercontent.com/u/3509412?v=3" width="100px;"/><br /><sub>Montlouis-Calixte Stéphane</sub>](http://sbydesign.fr)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=bulby97 "Code") [👀](#review-bulby97 "Reviewed Pull Requests") | [<img src="https://avatars2.githubusercontent.com/u/3619527?v=3" width="100px;"/><br /><sub>Parvez Kose</sub>](http://parvezk.github.io/)<br />[📖](https://github.com/kentcdodds/glamorous-website/commits?author=parvezk "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/23551907?v=3" width="100px;"/><br /><sub>William I. Olojede</sub>](http://william.ng/)<br />[📖](https://github.com/kentcdodds/glamorous-website/commits?author=williamolojede "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/13544620?v=3" width="100px;"/><br /><sub>Michael Altamirano</sub>](http://www.michaelaltamirano.com)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=mjaltamirano "Code") [📖](https://github.com/kentcdodds/glamorous-website/commits?author=mjaltamirano "Documentation") |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars1.githubusercontent.com/u/297132?v=3" width="100px;"/><br /><sub>Bhargav Anand</sub>](http://whoisandy.me)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=whoisandy "Code") [📖](https://github.com/kentcdodds/glamorous-website/commits?author=whoisandy "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/16496746?v=3" width="100px;"/><br /><sub>George "Tre" Ammatuna</sub>](https://github.com/TreTuna)<br />[📖](https://github.com/kentcdodds/glamorous-website/commits?author=TreTuna "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/1735193?v=3" width="100px;"/><br /><sub>Wojciech Kwolek</sub>](http://irth.pl)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=irth "Code") | [<img src="https://avatars2.githubusercontent.com/u/9091881?v=3" width="100px;"/><br /><sub>Arana Jhonny</sub>](https://twitter.com/aranajhonny)<br />[🌍](#translation-aranajhonny "Translation") | [<img src="https://avatars1.githubusercontent.com/u/6819701?v=3" width="100px;"/><br /><sub>Anthony Ascencio</sub>](http://linkedin.com/in/anthony2025)<br />[📖](https://github.com/kentcdodds/glamorous-website/commits?author=anthony2025 "Documentation") [🌍](#translation-anthony2025 "Translation") | [<img src="https://avatars2.githubusercontent.com/u/28659384?v=3" width="100px;"/><br /><sub>tdeschryver</sub>](https://github.com/tdeschryver)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=tdeschryver "Code") [👀](#review-tdeschryver "Reviewed Pull Requests") | [<img src="https://avatars2.githubusercontent.com/u/845983?v=3" width="100px;"/><br /><sub>Mike Wickett</sub>](http://www.wickett.ca)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=mwickett "Code") [🎨](#design-mwickett "Design") |
+| [<img src="https://avatars2.githubusercontent.com/u/11202705?v=3" width="100px;"/><br /><sub>Dan Seethaler</sub>](https://github.com/danseethaler)<br />[💡](#example-danseethaler "Examples") | [<img src="https://avatars2.githubusercontent.com/u/250426?v=3" width="100px;"/><br /><sub>Yuan Chuan</sub>](http://yuanchuan.name)<br />[👀](#review-yuanchuan "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/2041385?v=3" width="100px;"/><br /><sub>Phil Plückthun</sub>](https://twitter.com/_philpl)<br />[👀](#review-philpl "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/7849259?v=3" width="100px;"/><br /><sub>Hsin-chieh Yeh</sub>](https://github.com/HsinChiehYeh)<br />[👀](#review-HsinChiehYeh "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/16327281?v=3" width="100px;"/><br /><sub>Bernard Lin</sub>](https://github.com/bernard-lin)<br />[👀](#review-bernard-lin "Reviewed Pull Requests") | [<img src="https://avatars1.githubusercontent.com/u/1909957?v=3" width="100px;"/><br /><sub>Maxime Laforet</sub>](http://macx.im)<br />[👀](#review-Macxim "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/2954511?v=3" width="100px;"/><br /><sub>Etienne Talbot</sub>](https://github.com/etiennetalbot)<br />[👀](#review-etiennetalbot "Reviewed Pull Requests") |
+| [<img src="https://avatars1.githubusercontent.com/u/873419?v=3" width="100px;"/><br /><sub>Karl Groves</sub>](http://www.karlgroves.com)<br />[👀](#review-karlgroves "Reviewed Pull Requests") | [<img src="https://avatars1.githubusercontent.com/u/946645?v=3" width="100px;"/><br /><sub>Antonio Laguna</sub>](https://www.funcion13.com)<br />[👀](#review-Belelros "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/2142817?v=3" width="100px;"/><br /><sub>Simon Lydell</sub>](https://github.com/lydell)<br />[👀](#review-lydell "Reviewed Pull Requests") | [<img src="https://avatars1.githubusercontent.com/u/2387037?v=3" width="100px;"/><br /><sub>Anujan Panchadcharam</sub>](https://github.com/Anujan)<br />[👀](#review-Anujan "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/2036823?v=3" width="100px;"/><br /><sub>Carl Rosell</sub>](https://github.com/CarlRosell)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=CarlRosell "Code") | [<img src="https://avatars1.githubusercontent.com/u/4111526?v=3" width="100px;"/><br /><sub>Aaron Olson</sub>](https://github.com/aarondolson)<br />[📖](https://github.com/kentcdodds/glamorous-website/commits?author=aarondolson "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/8309423?v=3" width="100px;"/><br /><sub>Christian Gill</sub>](https://gillchristian.xyz)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=gillchristian "Code") |
+| [<img src="https://avatars2.githubusercontent.com/u/7799266?v=3" width="100px;"/><br /><sub>Jon Major</sub>](http://jonmajorc.com)<br />[🎨](#design-jonmajorc "Design") | [<img src="https://avatars2.githubusercontent.com/u/2084833?v=3" width="100px;"/><br /><sub>Hozefa</sub>](https://github.com/hozefaj)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=hozefaj "Code") [👀](#review-hozefaj "Reviewed Pull Requests") | [<img src="https://avatars2.githubusercontent.com/u/18056710?v=3" width="100px;"/><br /><sub>Audora Chalker</sub>](http://audora.me)<br />[📖](https://github.com/kentcdodds/glamorous-website/commits?author=audoralc "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/2993997?v=3" width="100px;"/><br /><sub>Josh Robertson</sub>](http://codepen.io/hossman)<br />[📖](https://github.com/kentcdodds/glamorous-website/commits?author=Hossman333 "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/82070?v=3" width="100px;"/><br /><sub>Alessandro Arnodo</sub>](http://alessandro.arnodo.net)<br />[👀](#review-vesparny "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/7034094?v=3" width="100px;"/><br /><sub>Aviv Rosental</sub>](https://github.com/avivr)<br />[👀](#review-avivr "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/656630?v=3" width="100px;"/><br /><sub>Atticus White</sub>](https://atticuswhite.com)<br />[👀](#review-ajwhite "Reviewed Pull Requests") |
+| [<img src="https://avatars2.githubusercontent.com/u/16336071?v=3" width="100px;"/><br /><sub>Nitin Tulswani</sub>](https://nitintulswani.surge.sh/)<br />[💡](#example-nitin42 "Examples") | [<img src="https://avatars1.githubusercontent.com/u/1203804?v=3" width="100px;"/><br /><sub>Jesse</sub>](https://github.com/motleydev)<br />[🎨](#design-motleydev "Design") [🌍](#translation-motleydev "Translation") [💻](https://github.com/kentcdodds/glamorous-website/commits?author=motleydev "Code") [📖](https://github.com/kentcdodds/glamorous-website/commits?author=motleydev "Documentation") [👀](#review-motleydev "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/6382544?v=3" width="100px;"/><br /><sub>Marc Apfelbaum</sub>](https://leafpub.org)<br />[🌍](#translation-karsasmus "Translation") [👀](#review-karsasmus "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/35398?v=3" width="100px;"/><br /><sub>Kai Richard König</sub>](http://kairichardkoenig.de)<br />[👀](#review-kairichard "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/8615251?v=3" width="100px;"/><br /><sub>Moe Sattler</sub>](https://github.com/MoeSattler)<br />[👀](#review-MoeSattler "Reviewed Pull Requests") [🌍](#translation-MoeSattler "Translation") | [<img src="https://avatars5.githubusercontent.com/u/7766185?v=4" width="100px;"/><br /><sub>Ian De La Cruz</sub>](https://github.com/RIanDeLaCruz)<br />[💻](https://github.com/kentcdodds/glamorous-website/commits?author=RIanDeLaCruz "Code") | [<img src="https://avatars1.githubusercontent.com/u/9669739?v=4" width="100px;"/><br /><sub>Atsushi Yamamoto</sub>](http://jumbosushi.github.io)<br /> |
+| [<img src="https://avatars1.githubusercontent.com/u/5678122?v=4" width="100px;"/><br /><sub>Jeppe Reinhold</sub>](http://www.bambuu.dk)<br />[📖](https://github.com/kentcdodds/glamorous-website/commits?author=JReinhold "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/8154172?v=4" width="100px;"/><br /><sub>Igor Konovalov</sub>](http://igorkonovalov.github.io)<br />[🌍](#translation-IgorKonovalov "Translation") [👀](#review-IgorKonovalov "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/22022930?v=4" width="100px;"/><br /><sub>Luzanov Pavel</sub>](http://gitpash.github.io)<br />[👀](#review-gitpash "Reviewed Pull Requests") [🌍](#translation-gitpash "Translation") | [<img src="https://avatars2.githubusercontent.com/u/9864073?v=4" width="100px;"/><br /><sub>Gleb Kost</sub>](https://github.com/glebez)<br />[📖](https://github.com/kentcdodds/glamorous-website/commits?author=glebez "Documentation") [🌍](#translation-glebez "Translation") |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors][all-contributors] specification.
@@ -64,24 +55,10 @@ MIT
 [build]: https://travis-ci.org/kentcdodds/glamorous-website
 [coverage-badge]: https://img.shields.io/codecov/c/github/kentcdodds/glamorous-website.svg?style=flat-square
 [coverage]: https://codecov.io/github/kentcdodds/glamorous-website
-[dependencyci-badge]: https://dependencyci.com/github/kentcdodds/glamorous-website/badge?style=flat-square
-[dependencyci]: https://dependencyci.com/github/kentcdodds/glamorous-website
-[version-badge]: https://img.shields.io/npm/v/glamorous-website.svg?style=flat-square
-[package]: https://www.npmjs.com/package/glamorous-website
-[downloads-badge]: https://img.shields.io/npm/dm/glamorous-website.svg?style=flat-square
-[npm-stat]: http://npm-stat.com/charts.html?package=glamorous-website&from=2016-04-01
-[license-badge]: https://img.shields.io/npm/l/glamorous-website.svg?style=flat-square
-[license]: https://github.com/kentcdodds/glamorous-website/blob/master/LICENSE
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
-[donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
-[donate]: http://kcd.im/donate
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
 [coc]: https://github.com/kentcdodds/glamorous-website/blob/master/CODE_OF_CONDUCT.MD
-[roadmap-badge]: https://img.shields.io/badge/%F0%9F%93%94-roadmap-CD9523.svg?style=flat-square
-[roadmap]: https://github.com/kentcdodds/glamorous-website/blob/master/other/ROADMAP.md
-[examples-badge]: https://img.shields.io/badge/%F0%9F%92%A1-examples-8C8E93.svg?style=flat-square
-[examples]: https://github.com/kentcdodds/glamorous-website/blob/master/other/EXAMPLES.md
 [github-watch-badge]: https://img.shields.io/github/watchers/kentcdodds/glamorous-website.svg?style=social
 [github-watch]: https://github.com/kentcdodds/glamorous-website/watchers
 [github-star-badge]: https://img.shields.io/github/stars/kentcdodds/glamorous-website.svg?style=social

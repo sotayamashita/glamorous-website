@@ -1,43 +1,79 @@
 import React from 'react'
-import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
+import {
+  LiveProvider,
+  LiveEditor,
+  LiveError,
+  LivePreview,
+} from '@kentcdodds/temp-react-live'
+import * as styledSystem from 'styled-system'
+import * as glamor from 'glamor'
 import glamorous from 'glamorous'
 import stripIndent from './utils/strip-indent'
 
 const StyledLiveProvider = glamorous(LiveProvider)({
-  margin: '0 auto',
+  marginLeft: 'auto',
+  marginRight: 'auto',
   display: 'flex',
   flexDirection: 'column',
   flexWrap: 'wrap',
   justifyContent: 'space-around',
-  maxWidth: '50rem',
+  maxWidth: '70rem',
+  marginTop: 20,
+  marginBottom: 20,
 })
 
-const StyledLiveEditor = glamorous(LiveEditor)({})
+const StyledLiveEditor = glamorous(LiveEditor)({flex: 1.7})
 
 const StyledLivePreview = glamorous(LivePreview)({
   padding: '1rem',
+  flex: 1,
 })
 
-const StyledLiveError = glamorous(LiveError)((props, {colors, fonts}) => ({
-  color: colors.code,
+const StyledLiveError = glamorous(
+  LiveError,
+)(({theme: {colors, fonts}}) => ({
+  color: colors.white,
   fontFamily: fonts.monospace,
-  backgroundColor: colors.white,
-  flexBasis: '100%',
-  width: '100%',
-  maxWidth: '100%',
   padding: '1rem',
+  background: colors.error,
+  fontSize: '0.8rem',
+  whiteSpace: 'pre',
+  lineHeight: 1,
+  flex: 1,
+  display: 'block',
 }))
 
-function CodePreview({noInline = true, code, scope = {glamorous}}) {
+const EditorContainer = glamorous.div(
+  {
+    display: 'flex',
+    justifyContent: 'stretch',
+    alignItems: 'stretch',
+  },
+  ({theme: {misc, mediaQueries}}) => ({
+    boxShadow: misc.boxShadow,
+    flexDirection: 'column',
+    [mediaQueries.mediumUp]: {
+      flexDirection: 'row',
+    },
+  }),
+)
+
+function CodePreview({
+  noInline = true,
+  code,
+  scope = {glamorous, styledSystem, glamor},
+}) {
   return (
     <StyledLiveProvider
       noInline={noInline}
       code={stripIndent(code).trim()}
       scope={scope}
     >
-      <StyledLivePreview />
+      <EditorContainer>
+        <StyledLiveEditor />
+        <StyledLivePreview />
+      </EditorContainer>
       <StyledLiveError />
-      <StyledLiveEditor />
     </StyledLiveProvider>
   )
 }

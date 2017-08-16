@@ -1,14 +1,19 @@
 import React from 'react'
-import {withContent} from '../../components/locale'
-import Layout from '../../components/layout'
-import PageSections from '../../components/page-sections'
+import DocsPage from '../../components/docs-page'
 
-function Examples({url, content, locale}) {
+function Examples({url}) {
   return (
-    <Layout pathname={url ? url.pathname : ''} locale={locale}>
-      <PageSections data={content} />
-    </Layout>
+    <DocsPage
+      url={url}
+      sections={[
+        require('./content/css-grid.md'),
+        require('./content/style-overrides.md'),
+        require('./content/button.md'),
+        require('./content/prop-styles.md'),
+      ]}
+      pageContent={require('./content/index.md')}
+    />
   )
 }
 
-export default withContent({page: 'examples'}, Examples)
+export default Examples

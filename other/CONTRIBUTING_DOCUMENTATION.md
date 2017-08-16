@@ -1,4 +1,4 @@
-# Locales
+# Content
 
 Hi! Thank you so much for your willingness to help out with
 translation/documentation! From the very beginning localization and
@@ -12,69 +12,46 @@ documentation to the project and/or translating it.
 
 We try to keep things organized by page. So in the `pages` directory, you'll
 find a directory for each of the pages. In each of these you'll find a
-`content` directory where the localization files are. These are JavaScript
-modules that export data with the content for that page. See the `README.md`
-in each of the `content` folders to get an idea of how that folder is supposed
-to work.
+`content` directory where the localization files are. These are markdown files
+and are `import`ed or `require`ed into the file that's using them. We have a
+special babel plugin (`other/babel-plugin-l10n-loader.js`) that inlines the
+right markdown file for the locale at compile-time.
 
-### Docs Pages structure
+For the `pages` content, you'll find that they have an `index.md` which starts
+with some `YAML` at the top and has no other content. It's normally pretty
+minimal just for the basic outline of the page. For example:
 
-Many of the pages have the same structure, so we'll just document them here:
-
-<details>
-<summary>Docs pages structure</summary>
-
-Here's an example of a docs page:
-
-```javascript
-import React from 'react'
-import {withContent} from '../../components/locale'
-import Layout from '../../components/layout'
-import PageSections from '../../components/page-sections'
-
-function Advanced({url, content, locale}) {
-  return (
-    <Layout pathname={url ? url.pathname : ''} locale={locale}>
-      <PageSections data={content} />
-    </Layout>
-  )
-}
-
-// the `page` here should be the name of the folder in which this file resides
-export default withContent({page: 'advanced'}, Advanced)
+```md
+---
+title: The awesome title
+heading: Some heading
+note: >
+  This is an optional note.
+  Notice that I can do multiline
+  by adding the `>` and indenting the lines.
+---
 ```
 
-With this, you'll need a `content/index.js` file with this structure:
+> `note` and `heading` are optional.
 
-```javascript
-module.exports = {
-  title: 'The title',
-  heading: `Some heading thing`,
-  sections: [
-    // these are local files that you require in
-    // see the structure of those next
-    require('./doc-section-1'),
-    require('./doc-section-2'),
-  ],
-}
+For the sections of the page, that looks like this:
+
+```md
+---
+title: The section title
+subtitle: A subtitle for the section
+codeSandboxId: 2k8yll8qj
+contributors:
+  - kentcdodds
+  - santaclaus
+---
+
+The markdown content that will be rendered for the section goes here.
+See below for some of the nifty things you can do with the markdown!
 ```
 
-Here's an example of what `./doc-section-1` would look like:
-
-```javascript
-module.exports = {
-  title: 'Title of the section (supports markdown)',
-  subtitle: 'The subtitle of the section (also supports markdown)',
-  description: `
-    # this is markdown parseable
-    with support for the special syntax mentioned below
-  `.replace(/~/g, '`'), // so you avoid having to escape backticks (read more below)
-  codesandboxId: '2k8yll8qj', // optional, will show a codesandbox embed below your docs
-  filename: __filename, // required
-}
-```
-
-</details>
+`codeSandboxId` is optional, but it can be nice to have a codeSandboxId for
+people to play around with if you can't use an interactive example (see below).
 
 ## Translation
 
@@ -84,28 +61,72 @@ are supposed to be structured for the files. The files you'll be translating
 are *JavaScript*, so you'll need to make sure that you only translate the parts
 that should be translated (in strings) and that the end result is valid JS.
 
+### Adding a new language
+
+To add a new language to the site, you need to make a few updates:
+
+1. Add your locale code to the `config.json` file in `supportedLocales`.
+2. Download the SVG for a flag that best represents that language from
+   [flag-icon-css](https://github.com/lipis/flag-icon-css/tree/master/flags/4x3)
+   and put it in `components/svgs/{LOCALE}.svg`
+3. Import the svg into `components/locale-chooser.js` and add a reference to it
+   in the `localeMap` in that file.
+
+Make a PR for that. Once it's been merged you can start contributing
+translations!
+
 ### Code samples
 
 Please don't translate code samples unless you're certain the code sample still
 works.
 
-### Crowdin
+### Workflow
 
-When translating, you will not be submitting PRs to this repo directly, instead
-we're using a service called Crowdin to do translations. It should hopefully
-make the process smooth and easy. Please sign up for a free account and join
-our efforts on the project page
-[here](https://crowdin.com/project/glamorous-website). You can find an intro
-for how to use Crowdin [here](https://youtu.be/LySRFuiKYLE).
+We don't yet have things set up to work with a tool (hopefully soon!).
+So we've got some tooling of our own to make your workflow as good
+as it can be. You will need to set up the project locally (see `CONTRIBUTING.md`
+for how to do this).
 
-Thank you!
+Before you get started, try to coordinate efforts with others who may be
+translating the same language. Search
+[the issues](https://github.com/kentcdodds/glamorous-website/issues) to see if
+anyone else is working on the language you are. If no issue exists, then
+[file a new issue](https://github.com/kentcdodds/glamorous-website/issues/new)
+indicating you'd like to translate content to a new language and you can use
+that to keep track of what translations you're working on and to coordinate with
+others who want to help.
+
+For the sections in the normal docs pages, you should be able to just go to the
+website to find the sections that are out of date or missing (there will be a
+note indicating that). But there are some translations files which don't have
+a notice on the website. For those, this workflow can be helpful:
+
+First, run `node other/list-l10n.js {locale}` (if you were doing French,
+`{locale}` would be `fr`, for Spanish, it would be `es`). This will list the
+files which have up to date translations, outdated translations, and files
+missing translations for the locale you specified. Go ahead and work your way
+through these files one-by-one. You don't have to do them all at once, you can
+do some of them, [submit a pull request](http://makeapullrequest.com), and come
+back later to do more.
+
+To keep things up to date, you can update your local copy of the project, then
+run the above script again. If you see any files listed under `Outdated`, then
+you know that there have been modifications to source files since translations
+were last completed. To know what changed, go through each file one by one and
+run: `node other/what-changed.js {path/to/english/file.md} {locale}`. This will
+show you the changes to that particular file since translations were last
+completed and should give you the insight you need to update the existing
+translations.
+
+Another useful tip is to
+[`watch`](https://help.github.com/articles/watching-repositories/)
+[the GitHub repo](https://github.com/kentcdodds/glamorous-website)
+for changes. This way, GitHub will notify you when pull requests are made
+and you can keep up with any changes to content.
+
+Thank you so much for your help! Now, please read the notes below!
 
 ## Important Markdown notes:
-
-Because the markdown is written in a JavaScript file and uses template
-literals, we use `~` rather than backticks (\`) because we don't want to have
-to escape common things like codeblocks. We use `replace` to swap `~` to a
-backtick so hopefully this is pretty straightforward.
 
 ### Special Syntax
 
@@ -126,11 +147,11 @@ code block. Here are some examples of what's possible:
 
 > options and defaults: {clickToRender: false, summary: ''}
 
-```md
-~~~interactive
+````md
+```interactive
 render(<button onClick={() => alert('Hello World')}>Hello World</button>)
-~~~
 ```
+````
 
 This will render an interactive bit of code using the `CodePreview` component.
 
@@ -138,13 +159,13 @@ This will render an interactive bit of code using the `CodePreview` component.
 
 > options and defaults: {type: 'info', title: undefined}
 
-```md
-~~~callout {type: 'danger', title: 'Footgun'}
+````md
+```callout {type: 'danger', title: 'Footgun'}
 You might be tempted to do x, but *don't*!
 
 _markdown works in here_
-~~~
 ```
+````
 
 This will render a highlighted note.
 
@@ -153,10 +174,10 @@ This will render a highlighted note.
 With these pragmas you can also specify options. These come in the form of an
 object literal immediately after the pragma like so:
 
-```md
-~~~interactive {clickToRender: true, summary: 'Alert hello world'}
+````md
+```interactive {clickToRender: true, summary: 'Alert hello world'}
 render(<button onClick={() => alert('Hello World')}>Hello World</button>)
-~~~
 ```
+````
 
 There may be more forms in the future, but right now this is all we have.

@@ -30,9 +30,9 @@ Object.assign(statusColors, {
 })
 
 export const colors = {
-  primary: '#ED5C70',
-  primaryMed: '#F67982',
-  primaryLight: '#FFEFEF',
+  primary: '#DA233C',
+  primaryMed: '#CC3A4B',
+  primaryLight: '#FFF2F2',
   secondary: '#BD3D90',
   faded: '#B2C1C0',
   white: '#fff',
@@ -44,6 +44,7 @@ export const colors = {
   darkGray: '#333',
   code: '#4F4F4F',
   black: '#000',
+  error: '#ff5555',
   ...statusColors,
 }
 
@@ -56,10 +57,16 @@ export const fonts = {
 export const mediaQueries = {
   smallUp: `@media ${screen}`,
   smallOnly: `@media ${screen} and (max-width: ${upperSmallRange}px)`,
+  mediumDown: `@media ${screen} and (max-width: ${lowerMediumRange - 1}px)`,
   mediumUp: `@media ${screen} and (min-width: ${lowerMediumRange}px)`,
   mediumOnly: `@media ${screen} and (min-width: ${lowerMediumRange}px and (min-width: ${upperMediumRange}px)`,
+  largeDown: `@media ${screen} and (max-width: ${lowerLargeRange - 1}px)`,
   largeUp: `@media ${screen} and (min-width: ${lowerLargeRange}px)`,
   largeOnly: `@media ${screen} and (min-width: ${lowerLargeRange}px and (min-width: ${upperLargeRange}px)`,
 }
 
-export default {fonts, colors, mediaQueries}
+export const misc = {
+  boxShadow: '0.05rem 0.05rem 1.12rem rgba(20, 20, 20, 0.27)',
+}
+
+export default {fonts, colors, mediaQueries, misc}

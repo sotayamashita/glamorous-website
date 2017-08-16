@@ -6,74 +6,81 @@
     "dev": "npm start dev",
     "build": "npm start build",
     "start": "nps",
-    "commitmsg": "opt --in commit-msg --exec \"validate-commit-msg\"",
-    "precommit": "lint-staged && opt --in pre-commit --exec \"npm start validate && npm start build.clean\"",
+    "precommit": "lint-staged && opt --in pre-commit --exec \"npm start validate\"",
     "test": "npm start test"
   },
   "author": "Paul Molluzzo <paul@molluzzo.com> (https://paul.molluzzo.com)",
   "license": "MIT",
-  "keywords": [
-    "glamorous",
-    "react",
-    "css-in-js"
-  ],
+  "keywords": ["glamorous", "react", "css-in-js"],
   "dependencies": {
+    "@kentcdodds/temp-react-live": "1.8.0",
     "common-tags": "^1.4.0",
-    "glamor": "^2.20.25",
-    "glamorous": "^3.19.1",
-    "html-loader": "^0.4.5",
-    "json-loader": "^0.5.4",
-    "markdown-loader": "^2.0.0",
+    "glamor": "^2.20.37",
+    "glamorous": "^4.0.0",
     "marked": "^0.3.6",
-    "next": "^2.4.1",
+    "next": "3.0.1-beta.5",
     "polished": "^1.1.3",
+    "prismjs": "^1.6.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-live": "^1.5.3",
     "react-markdown": "^2.5.0",
-    "remark": "^7.0.1",
+    "remark": "^8.0.0",
     "remark-html": "^6.0.0",
+    "slugify": "^1.1.0",
+    "styled-system": "^1.0.0-9",
     "unist-util-visit": "^1.1.1",
-    "webpack": "^2.6.1"
+    "webpack": "3.4.1"
   },
   "devDependencies": {
     "all-contributors-cli": "^4.3.0",
+    "ast-pretty-print": "^2.0.0",
+    "await-url": "^0.3.0",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
+    "babel-macros": "^0.5.2",
+    "babel-plugin-glamorous-displayname": "1.1.3",
     "babel-plugin-inline-react-svg": "^0.4.0",
+    "babel-plugin-tester": "^3.3.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-plugin-transform-inline-environment-variables": "0.1.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "commitizen": "^2.9.6",
-    "cross-env": "^5.0.0",
+    "babylon": "^6.17.4",
+    "chalk": "^2.0.1",
     "cross-spawn": "^5.1.0",
-    "cz-conventional-changelog": "^2.0.0",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
-    "eslint": "^3.19.0",
-    "eslint-config-kentcdodds": "^12.4.1",
+    "eslint": "^4.3.0",
+    "eslint-config-kentcdodds": "^12.4.2",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jest": "^20.0.3",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.0.1",
-    "husky": "^0.13.4",
+    "flow-bin": "0.51.1",
+    "glob": "^7.1.2",
+    "husky": "^0.14.3",
     "jest": "^20.0.4",
-    "jest-glamor-react": "^1.3.0",
-    "lint-staged": "^3.5.1",
+    "jest-glamor-react": "^3.0.0",
+    "js-yaml": "^3.8.4",
+    "lint-staged": "^4.0.2",
     "normalize-url": "^1.9.1",
-    "nps": "^5.3.1",
-    "nps-utils": "^1.2.0",
+    "now": "^7.1.1",
+    "nps": "^5.6.0",
+    "nps-utils": "^1.3.0",
     "octonode": "^0.7.13",
     "opt-cli": "^1.5.1",
+    "path-exists": "^3.0.0",
     "prettier-eslint-cli": "^4.0.2",
+    "preval.macro": "^1.0.1",
     "react-test-renderer": "^15.5.4",
-    "url-regex": "^4.1.0",
-    "validate-commit-msg": "^2.12.1"
+    "remark-frontmatter": "^1.0.0",
+    "url-regex": "^4.1.0"
   },
   "jest": {
     "testEnvironment": "jsdom",
+    "setupFiles": ["./other/test-setup.js"],
     "coverageThreshold": {
       "global": {
         "branches": 50,
@@ -81,20 +88,13 @@
         "lines": 50,
         "statements": 50
       }
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
+    },
+    "testPathIgnorePatterns": ["/fixtures/"],
+    "snapshotSerializers": ["enzyme-to-json/serializer", "jest-glamor-react"]
   },
   "lint-staged": {
-    ".all-contributorsrc": [
-      "npm start contributors.generate && echo ignore arg",
-      "git add README.md && echo ignore arg"
-    ],
     "*.js": [
-      "prettier-eslint --write",
+      "prettier-eslint --write --no-semi --single-quote --trailing-comma=es5",
       "eslint",
       "git add"
     ]

@@ -4,7 +4,7 @@ import glamorous from 'glamorous'
 import {colors} from '../styles/global-styles'
 
 const getPathname = pathname => {
-  return pathname === undefined ? '' : pathname.pathname
+  return pathname === undefined ? '' : pathname
 }
 
 const basicLinkStyles = {cursor: 'pointer'}
@@ -14,22 +14,45 @@ const anchorStyles = {
   color: colors.primaryMed,
 }
 
-const activeLinkStyles = (props, theme) => ({
-  color: props.active || props.external ?
-    theme.colors.primary :
-    theme.colors.primaryMed,
+const activeLinkStyles = props => ({
+  color:
+    props.active || props.external ?
+      props.theme.colors.primary :
+      props.theme.colors.primaryMed,
   textDecoration: props.active || props.external ? 'underline' : 'none',
 })
+
+const slugStyles = {
+  position: 'relative',
+  display: 'block',
+
+  '& svg': {
+    display: 'none',
+    position: 'absolute',
+    top: 0,
+    left: '-2.5rem',
+    width: '1.75em',
+    height: '2.827em',
+  },
+
+  '&:hover svg': {
+    display: 'block',
+  },
+}
 
 const StyledAnchor = glamorous.a(
   basicLinkStyles,
   anchorStyles,
-  (props, theme) => activeLinkStyles(props, theme),
+  activeLinkStyles,
+  props => (props.isSlug ? slugStyles : ''),
 )
 
-const Anchor = ({href, prefetch, external, pathname, ...rest}) => {
+const Anchor = ({href, prefetch, external, pathname, isSlug, ...rest}) => {
   if (external) {
     return <StyledAnchor href={href} external {...rest} />
+  }
+  if (isSlug) {
+    return <StyledAnchor href={href} external isSlug {...rest} />
   }
   return (
     <Link prefetch={prefetch} href={href}>
@@ -42,7 +65,7 @@ const Anchor = ({href, prefetch, external, pathname, ...rest}) => {
   )
 }
 
-const solidColors = {backgroundColor: colors.primary, color: 'white'}
+const solidColors = {backgroundColor: colors.primaryMed, color: 'white'}
 
 const transparentColors = {
   backgroundColor: 'rgba(255, 255, 255, 0.5)',
